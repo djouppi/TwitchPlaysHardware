@@ -12,7 +12,7 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
-#
+
 
 import configparser
 import os
@@ -455,63 +455,167 @@ if mode.lower() == "anarchy":
                     print(user)
                 
             # Take in output
-            if out.lower() == 'up':
+            if out[:2].lower() == 'up':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('up_arrow')
-                ser.write( ('U').encode())
+                if len(out[2:]) == 1:
+                    if out[2:].isdigit() == True:
+                        if int(out[2:]) >=2:
+                            if int(out[2:]) <=9:
+                                for j in range(0,int(out[2:])):
+                                    ser.write( ('U').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('U').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'right':
+            if out[:5].lower() == 'right':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('right_arrow')
-                ser.write( ('R').encode())
+                if len(out[5:]) == 1:
+                    if out[5:].isdigit() == True:
+                        if int(out[5:]) >=2:
+                            if int(out[5:]) <=9:
+                                for j in range(0,int(out[5:])):
+                                    ser.write( ('R').encode())
+                                    j+= 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('R').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'down':
+            if out[:4].lower() == 'down':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('down_arrow')
-                ser.write( ('D').encode())
+                if len(out[4:]) == 1:
+                    if out[4:].isdigit() == True:
+                        if int(out[4:]) >=2:
+                            if int(out[4:]) <=9:
+                                for j in range(0,int(out[4:])):
+                                    ser.write( ('D').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('D').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'left':
+            if out[:4].lower() == 'left':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('left_arrow')
-                ser.write( ('L').encode())
+                if len(out[4:]) == 1:
+                    if out[4:].isdigit() == True:
+                        if int(out[4:]) >=2:
+                            if int(out[4:]) <=9:
+                                for j in range(0,int(out[4:])):
+                                    ser.write( ('L').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('L').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'a':
+            if out[:1].lower() == 'a':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('z')
-                ser.write( ('A').encode())
+                if len(out[1:]) == 1:
+                    if out[1:].isdigit() == True:
+                        if int(out[1:]) >=2:
+                            if int(out[1:]) <=9:
+                                for j in range(0,int(out[1:])):
+                                    ser.write( ('A').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('A').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'b':
+            if out[:1].lower() == 'b':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('x')
-                ser.write( ('B').encode())
+                if len(out[1:]) == 1:
+                    if out[1:].isdigit() == True:
+                        if int(out[1:]) >=2:
+                            if int(out[1:]) <=9:
+                                for j in range(0,int(out[1:])):
+                                    ser.write( ('B').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('B').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'start':
+            if out[:5].lower() == 'start':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('enter')
-                ser.write( ('S').encode())
+                if len(out[5:]) == 1:
+                    if out[5:].isdigit() == True:
+                        if int(out[5:]) >=2:
+                            if int(out[5:]) <=9:
+                                for j in range(0,int(out[5:])):
+                                    ser.write( ('S').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('S').encode())
                 print (ser.readline()) 
                 addtofile()
-            if out.lower() == 'select':
+            if out[:6].lower() == 'select':
                 shell.AppActivate("%s" % APP)
                 time.sleep(.02)
                 press('backspace')
-                ser.write( ('E').encode())
+                if len(out[6:]) == 1:
+                    if out[6:].isdigit() == True:
+                        if int(out[6:]) >=2:
+                            if int(out[6:]) <=9:
+                                for j in range(0,int(out[6:])):
+                                    ser.write( ('E').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('E').encode())
                 print (ser.readline()) 
                 addtofile()
-                
+            if out[:1].lower() == 'x':
+                shell.AppActivate("%s" % APP)
+                time.sleep(.02)
+                press('backspace')
+                if len(out[1:]) == 1:
+                    if out[1:].isdigit() == True:
+                        if int(out[1:]) >=2:
+                            if int(out[1:]) <=9:
+                                for j in range(0,int(out[1:])):
+                                    ser.write( ('X').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('X').encode())
+                print (ser.readline()) 
+                addtofile()
+            if out[:1].lower() == 'y':
+                shell.AppActivate("%s" % APP)
+                time.sleep(.02)
+                press('backspace')
+                if len(out[1:]) == 1:
+                    if out[1:].isdigit() == True:
+                        if int(out[1:]) >=2:
+                            if int(out[1:]) <=9:
+                                for j in range(0,int(out[1:])):
+                                    ser.write( ('Y').encode())
+                                    j += 1
+                                    time.sleep(.5)
+                else:
+                    ser.write( ('Y').encode())
+                print (ser.readline()) 
+                addtofile()
+                   
             # Write to file for stream view
             with open("commands.txt", "w") as f:
                 for item in commands:
